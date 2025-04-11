@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPR Global</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #000;
+    }
+
+    .logo img {
+      height: 60px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #f9b233;
+    }
+
+    .cta-btn {
+      background-color: #f9b233;
+      border: none;
+      padding: 0.5rem 1rem;
+      color: #000;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      color: #fff;
+    }
+
+    .overlay img {
+      max-width: 200px;
+      display: block;
+    }
+
+    .overlay button {
+      margin-top: 1rem;
+      background-color: #f9b233;
+      border: none;
+      padding: 0.5rem 1rem;
+      color: #000;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .welcome, .brands, .contact-form, footer {
+      padding: 3rem 2rem;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .welcome h2 {
+      color: #000;
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .spr-logo-section {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      text-align: left;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .spr-logo-section img {
+      width: 150px;
+    }
+
+    .spr-logo-section .text {
+      max-width: 600px;
+    }
+
+    .spr-logo-section .text h3 {
+      font-weight: 700;
+      color: #000;
+    }
+
+    .spr-logo-section .text p {
+      font-size: 0.95rem;
+      color: #333;
+      margin-top: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .spr-logo-section .text a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #f9b233;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .brand-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .brand-card {
+      background-color: #222;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .brand-card h3 {
+      color: #f9b233;
+    }
+
+    .brand-card p {
+      font-size: 0.9rem;
+      margin: 1rem 0;
+    }
+
+    .brand-card button {
+      background-color: #f9b233;
+      border: none;
+      padding: 0.4rem 1rem;
+      border-radius: 5px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .business-strip {
+      background-color: #f9b233;
+      color: #000;
+      padding: 1rem;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .contact-form button {
+      background-color: #f9b233;
+      padding: 0.75rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      background-color: #000;
+    }
+
+    footer .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    footer div {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    footer p, footer a {
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+
+    footer a:hover {
+      color: #f9b233;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="SPR Logo">
+    </div>
+    <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="#brands">Brands</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#form">Business Opportunities</a></li>
+        </ul>
+      </nav>
+      
+    <button class="cta-btn">Get in Touch</button>
+  </header>
+
+  <section class="hero" id="home">
+    <img src="Biriyani.png" alt="Food Banner">
+    <div class="overlay">
+      <img src="logo.png" alt="Salt'n Spice Logo">
+      <button>Know More</button>
+    </div>
+  </section>
+
+  <section class="welcome">
+    <h2>WELCOME TO SPR GLOBAL</h2>
+    <div class="spr-logo-section">
+      <img src="SPR.png" alt="SPR Logo">
+      <div class="text">
+        <h3>Inspiring Lives, Empowering Communities</h3>
+        <p>At SPR Global, we believe in creating exceptional experiences through our diverse range of brands. From redefining fitness and lifestyle to serving world-class cuisines, we are dedicated to enhancing everyday living.</p>
+        <p>SPR Global stands at the intersection of innovation, quality, and affordability. With a commitment to excellence and customer satisfaction, we curate experiences that cater to various lifestyle needs, ensuring our customers feel valued and inspired.</p>
+        <a href="#brands">KNOW MORE</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="brands" style="background-color:#0e0e0e; color:white; padding:60px 20px; text-align:center;">
+    <h2 style="font-size:32px; margin-bottom:40px; font-weight:700;">BRANDS WE OPERATE</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:30px; max-width:1200px; margin:0 auto;">
+      
+        <div style="background:#1e1e1e; border-radius:8px; padding:30px; text-align:center;">
+            <img src="PONNUSAMY.png" alt="Ponnusamy" style="height:60px; margin-bottom:20px;">
+            <p style="font-size:14px; line-height:1.6;">Dive into a culinary journey with Ponnusamy, where traditional flavors meet unmatched quality. Relish the essence of South Indian heritage on your plate.</p>
+            <a href="ponnusamy.html" style="display:inline-block; margin-top:20px; background:none; border:none; color:#f9b233; font-weight:bold; cursor:pointer; text-decoration:none;">KNOW MORE</a>
+        </div>
+          
+      
+      <div style="background:#1e1e1e; border-radius:8px; padding:30px; text-align:center;">
+        <img src="cheap.png" alt="Cheap & Best" style="height:60px; margin-bottom:20px;">
+        <p style="font-size:14px; line-height:1.6;">Redefining grooming for men, Cheap and Best offers top-notch salon services at unbeatable prices. Get styled by professionals who understand your needs.</p>
+        <button style="margin-top:20px; background:none; border:none; color:#f9b233; font-weight:bold; cursor:pointer;">KNOW MORE</button>
+      </div>
+      
+      <div style="background:#1e1e1e; border-radius:8px; padding:30px; text-align:center;">
+        <img src="logo.png" alt="Sultan's Biryani" style="height:60px; margin-bottom:20px;">
+        <p style="font-size:14px; line-height:1.6;">Savor the rich taste of Sultan’s Biryani, crafted with the finest ingredients and a royal touch. A dish fit for every occasion, it’s more than just biryani – it’s an experience.</p>
+        <button style="margin-top:20px; background:none; border:none; color:#f9b233; font-weight:bold; cursor:pointer;">KNOW MORE</button>
+      </div>
+      
+      <div style="background:#1e1e1e; border-radius:8px; padding:30px; text-align:center;">
+        <img src="JONAH.png" alt="Jonah's Bistro" style="height:60px; margin-bottom:20px;">
+        <p style="font-size:14px; line-height:1.6;">From continental delicacies to fusion delights, Jonah’s Bistro is the perfect spot to unwind and indulge. Great food, great ambiance, and even better memories.</p>
+        <button style="margin-top:20px; background:none; border:none; color:#f9b233; font-weight:bold; cursor:pointer;">KNOW MORE</button>
+      </div>
+      
+      <div style="background:#1e1e1e; border-radius:8px; padding:30px; text-align:center;">
+        <img src="image.png" alt="FX" style="height:60px; margin-bottom:20px;">
+        <p style="font-size:14px; line-height:1.6;">Elevate your shopping experience with FX, bringing you the best in fashion, lifestyle, and innovation under one roof.</p>
+        <button style="margin-top:20px; background:none; border:none; color:#f9b233; font-weight:bold; cursor:pointer;">KNOW MORE</button>
+      </div>
+      
+      <div style="background:#1e1e1e; border-radius:8px; padding:30px; text-align:center;">
+        <img src="slam.png" alt="SLAM" style="height:60px; margin-bottom:20px;">
+        <p style="font-size:14px; line-height:1.6;">Dive into a culinary journey with Ponnusamy, where traditional flavors meet unmatched quality. Relish the essence of South Indian heritage on your plate.</p>
+        <button style="margin-top:20px; background:none; border:none; color:#f9b233; font-weight:bold; cursor:pointer;">KNOW MORE</button>
+      </div>
+  
+    </div>
+  </section>
+  
+
+<!-- Business Opportunity Strip -->
+<div style="background: linear-gradient(to right, #d4a019, #e4c057); color: white; font-weight: bold; text-align: center; padding: 12px 0; font-size: 18px; letter-spacing: 2px;">
+    BUSINESS OPPORTUNITIES • BUSINESS OPPORTUNITIES • BUSINESS OPPORTUNITIES
+  </div>
+  
+  <!-- Contact Section -->
+  <section id="form" style="display: flex; flex-wrap: wrap; justify-content: space-between; padding: 60px 20px; background-color: #fff;">
+    
+    <!-- Left Text Block -->
+    <div style="flex: 1; min-width: 300px; max-width: 500px; padding-right: 40px;">
+      <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 16px;">Become an Entrepreneur Today –<br>Grow Your Business with SPR Global</h2>
+      <p style="font-size: 15px; line-height: 1.6; color: #333;">
+        Partner with us and unlock your potential in the thriving industries of food, fashion, fitness, and entertainment. SPR Global provides the support, resources, and proven business models you need to succeed.
+      </p>
+  
+      <div style="margin-top: 40px;">
+        <div style="margin-bottom: 20px;">
+          <strong>Corporate Office</strong><br>
+          SPR Global Headquarters<br>
+          [Address Line 1]<br>
+          [City, State, ZIP Code]
+        </div>
+  
+        <div>
+          <strong>Feel Free to Contact Us</strong><br>
+          +91 8765431671<br>
+          sprglobal@gmail.com
+        </div>
+      </div>
+    </div>
+  
+    <!-- Right Contact Form -->
+    <form style="flex: 1; min-width: 320px; background-color: #f7f7f7; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
+      <div style="display: flex; gap: 20px; margin-bottom: 20px;">
+        <input type="text" placeholder="Full Name" required style="flex:1; padding: 10px; border: none; border-bottom: 1px solid #aaa; background: transparent;">
+        <input type="text" placeholder="Phone Number" required style="flex:1; padding: 10px; border: none; border-bottom: 1px solid #aaa; background: transparent;">
+      </div>
+  
+      <div style="display: flex; gap: 20px; margin-bottom: 20px;">
+        <input type="email" placeholder="Email" required style="flex:1; padding: 10px; border: none; border-bottom: 1px solid #aaa; background: transparent;">
+        <select style="flex:1; padding: 10px; border: none; border-bottom: 1px solid #aaa; background: transparent;">
+          <option>Interested Brand</option>
+          <option>The Ponnusamy Elite</option>
+          <option>Sultan's Biryani</option>
+          <option>Jonah’s Bistro</option>
+          <option>Cheap & Best</option>
+          <option>Funxtreme</option>
+          <option>SLAM Fitness</option>
+        </select>
+      </div>
+  
+      <textarea placeholder="Message (Optional)" rows="4" style="width: 100%; padding: 10px; border: none; border-bottom: 1px solid #aaa; background: transparent; margin-bottom: 20px;"></textarea>
+      <button type="submit" style="background-color: black; color: white; padding: 10px 30px; border: none; border-radius: 25px; font-weight: bold; cursor: pointer;">SUBMIT</button>
+    </form>
+  </section>
+  
+  <!-- Footer -->
+  <footer id="contact" style="background-color: #111; color: #fff; padding: 50px 20px 20px;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: auto; gap: 40px;">
+  
+      <!-- Logo & Description -->
+      <div style="flex: 1 1 250px; min-width: 220px;">
+        <img src="SPR GOLD.png" alt="SPR Global Logo" style="height: 40px; margin-bottom: 15px;">
+        <p style="font-size: 14px; line-height: 1.6; color: #ccc;">
+          SPR Global is a visionary company empowering entrepreneurs in the food, fashion, fitness, and entertainment industries. We are committed to delivering exceptional experiences through our diverse range of brands.
+        </p>
+      </div>
+  
+      <!-- Quick Links -->
+      <div style="flex: 1 1 180px; min-width: 180px;">
+        <h4 style="margin-bottom: 15px; font-weight: bold;">Quick Links</h4>
+        <p style="margin: 6px 0;"><a href="#home" style="color: #fff; text-decoration: none;">Home</a></p>
+        <p style="margin: 6px 0;"><a href="#brands" style="color: #fff; text-decoration: none;">Brands We Operate</a></p>
+        <p style="margin: 6px 0;"><a href="#form" style="color: #fff; text-decoration: none;">Business Opportunity</a></p>
+      </div>
+  
+      <!-- Brands -->
+      <div style="flex: 1 1 180px; min-width: 180px;">
+        <h4 style="margin-bottom: 15px; font-weight: bold;">Brands</h4>
+        <p style="margin: 6px 0;">The Ponnusamy Elite</p>
+        <p style="margin: 6px 0;">Sultan’s Biryani</p>
+        <p style="margin: 6px 0;">Jonah’s Bistro</p>
+        <p style="margin: 6px 0;">Slam Fitness Studio</p>
+        <p style="margin: 6px 0;">Cheap & Best</p>
+        <p style="margin: 6px 0;">Funxtreme</p>
+      </div>
+  
+      <!-- Contact Info -->
+      <div style="flex: 1 1 220px; min-width: 220px;">
+        <h4 style="margin-bottom: 15px; font-weight: bold;">Contact</h4>
+        <p style="font-size: 11px; color: #aaa; margin-bottom: 3px;">CALL</p>
+        <p style="margin: 0 0 12px;">+91 891 989-11-91</p>
+  
+        <p style="font-size: 11px; color: #aaa; margin-bottom: 3px;">EMAIL</p>
+        <p style="margin: 0 0 12px;">sprglobal@gmail.com</p>
+  
+        <p style="font-size: 11px; color: #aaa; margin-bottom: 3px;">ADDRESS</p>
+        <p style="margin: 0;">SPR Global Headquarters [Address Line 1]<br>[City, State, ZIP Code]</p>
+      </div>
+    </div>
+  
+    <p style="text-align: center; color: #aaa; font-size: 13px; margin-top: 40px;">&copy; 2024 – Copyright</p>
+  </footer>
+
+  <section id="contact" style="background-color: #fff; color: #000; padding: 4rem 2rem;">
+    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem; font-weight: 700;">Connect With Us</h2>
+    <form style="max-width: 700px; margin: 0 auto; display: grid; gap: 1.5rem;">
+      <div style="display: flex; flex-direction: column;">
+        <label for="name" style="margin-bottom: 0.5rem; font-weight: 600;">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required style="padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;">
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <label for="email" style="margin-bottom: 0.5rem; font-weight: 600;">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required style="padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;">
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <label for="phone" style="margin-bottom: 0.5rem; font-weight: 600;">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" style="padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;">
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <label for="message" style="margin-bottom: 0.5rem; font-weight: 600;">Your Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required style="padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+      </div>
+      <button type="submit" style="background-color: #f9b233; color: #000; font-weight: bold; padding: 0.8rem; border: none; border-radius: 5px; cursor: pointer;">Submit</button>
+    </form>
+  </section>
+  
+  
+  
+ 
+
+</html>
